@@ -1,17 +1,29 @@
 package kodlamaio.HrmsProject.core.utilities.adapters;
 
-import java.rmi.RemoteException;
+//import java.rmi.RemoteException;
 
 
 import org.springframework.stereotype.Service;
 
 import kodlamaio.HrmsProject.entities.concretes.Candidate;
-import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
+//import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
 
 @Service
 public class MernisAdapter implements CheckIfRealPersonService {
 
 	@Override
+	public boolean checkIfReal(Candidate candidate) {
+		if(candidate.getIdentificationNumber().length()!=11) {
+			return false;
+
+		}
+		return true;
+	}
+	
+	
+	
+
+/*	@Override
 	public boolean checkIfReal(Candidate candidate) {
 		KPSPublicSoapProxy client= new KPSPublicSoapProxy();
 		
@@ -28,5 +40,6 @@ public class MernisAdapter implements CheckIfRealPersonService {
 		return result;
 		
 	}
-
+*/
+	
 }
