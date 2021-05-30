@@ -21,6 +21,6 @@ public interface JobAdvertisementService {
 	
 	DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(LocalDate releaseDate);
 	
-	DataResult<List<JobAdvertisement>> getByIsOpenAndEmployer_CompanyName(String companyName);
+	DataResult<List<JobAdvertisement>> getByEmployerIdAndIsActive(int id,boolean isActive);
 	
 }

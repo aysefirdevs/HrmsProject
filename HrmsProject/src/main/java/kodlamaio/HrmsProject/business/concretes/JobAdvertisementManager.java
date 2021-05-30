@@ -66,9 +66,9 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	}
 
 	@Override
-	public DataResult<List<JobAdvertisement>> getByIsOpenAndEmployer_CompanyName(String companyName) {
+	public DataResult<List<JobAdvertisement>> getByEmployerIdAndIsActive(int id,boolean isActive) {
 		return new SuccessDataResult<List<JobAdvertisement>>
-		(this.jobAdvertisementDao.getByIsOpenAndEmployer_CompanyName(companyName),
+		(this.jobAdvertisementDao.getByEmployerIdAndIsActive(id, isActive),
 				"firmaya ait tüm aktif iş ilanları listlendi.");
 	}
 
