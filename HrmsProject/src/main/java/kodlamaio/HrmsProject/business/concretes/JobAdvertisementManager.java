@@ -61,7 +61,15 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	@Override
 	public DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(LocalDate releaseDate) {
 		return new SuccessDataResult<List<JobAdvertisement>>
-		(this.jobAdvertisementDao.getByIsOpenAndReleaseDate(releaseDate));
+		(this.jobAdvertisementDao.getByIsOpenAndReleaseDate(releaseDate),
+				"aktif tüm iş ilanları tarihe göre listlendi.");
+	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getByIsOpenAndEmployer_CompanyName(String companyName) {
+		return new SuccessDataResult<List<JobAdvertisement>>
+		(this.jobAdvertisementDao.getByIsOpenAndEmployer_CompanyName(companyName),
+				"firmaya ait tüm aktif iş ilanları listlendi.");
 	}
 
 	

@@ -52,5 +52,10 @@ public class JobAdvertisementsController {
 	public DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(@RequestParam LocalDate releaseDate){
 		return this.jobAdvertisementService.getByIsOpenAndReleaseDate(releaseDate);
 	}
+	
+	@GetMapping("/getByIsOpenAndEmployer_CompanyName")
+	public DataResult<List<JobAdvertisement>> getByIsOpenAndEmployer_CompanyName(@RequestParam String companyName){
+		return this.jobAdvertisementService.getByIsOpenAndEmployer_CompanyName(companyName);
+	}
 
 }
