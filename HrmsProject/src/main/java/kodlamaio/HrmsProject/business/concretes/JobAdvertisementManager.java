@@ -1,6 +1,7 @@
 package kodlamaio.HrmsProject.business.concretes;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,12 +48,20 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 
 	@Override
 	public DataResult<JobAdvertisement> getById(int id) {
-		return new SuccessDataResult<JobAdvertisement>(this.jobAdvertisementDao.getOne(id));
+		return new SuccessDataResult<JobAdvertisement>
+		(this.jobAdvertisementDao.getOne(id));
 	}
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getAllOpenJobAdvertisementList() {
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getAllOpenJobAdvertisementList());
+		return new SuccessDataResult<List<JobAdvertisement>>
+		(this.jobAdvertisementDao.getAllOpenJobAdvertisementList());
+	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(LocalDate releaseDate) {
+		return new SuccessDataResult<List<JobAdvertisement>>
+		(this.jobAdvertisementDao.getByIsOpenAndReleaseDate(releaseDate));
 	}
 
 	

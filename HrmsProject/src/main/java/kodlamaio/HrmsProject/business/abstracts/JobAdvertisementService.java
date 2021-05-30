@@ -1,6 +1,7 @@
 package kodlamaio.HrmsProject.business.abstracts;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
 import kodlamaio.HrmsProject.core.utilities.results.DataResult;
@@ -18,5 +19,6 @@ public interface JobAdvertisementService {
 	
 	DataResult<List<JobAdvertisement>> getAllOpenJobAdvertisementList();
 	
+	DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(LocalDate releaseDate);
 	
 }

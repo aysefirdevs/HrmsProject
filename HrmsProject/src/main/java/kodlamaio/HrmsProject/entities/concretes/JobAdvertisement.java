@@ -1,5 +1,6 @@
 package kodlamaio.HrmsProject.entities.concretes;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -53,13 +54,13 @@ public class JobAdvertisement {
 		@Column(name="open_position")
 		private int openPosition;
 		
-		@Temporal(TemporalType.DATE)
+
 		@Column(name="deadline")
-		private Date deadline;
+		private LocalDate deadline;
 		
-		@Temporal(TemporalType.DATE)
+	
 		@Column(name="release_date")
-		private Date releaseDate;
+		private LocalDate releaseDate;
 		
 		@Column(name="is_active")
 		private boolean isActive;
