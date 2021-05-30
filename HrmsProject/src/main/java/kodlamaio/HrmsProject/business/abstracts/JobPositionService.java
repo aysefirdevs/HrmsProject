@@ -9,5 +9,8 @@ import kodlamaio.HrmsProject.entities.concretes.JobPosition;
 
 public interface JobPositionService {
 	DataResult<List<JobPosition>> getAll();
+	
 	Result add(JobPosition jobPosition);
+	
+	
 }
