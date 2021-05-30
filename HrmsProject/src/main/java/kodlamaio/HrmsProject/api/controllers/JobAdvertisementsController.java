@@ -48,14 +48,14 @@ public class JobAdvertisementsController {
 		return this.jobAdvertisementService.getAllOpenJobAdvertisementList();
 	}
 	
-	@GetMapping("/getByIsOpenAndReleaseDate")
-	public DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(@RequestParam LocalDate releaseDate){
-		return this.jobAdvertisementService.getByIsOpenAndReleaseDate(releaseDate);
-	}
-	
 	@GetMapping("/getByEmployerIdAndIsActive")
 	public DataResult<List<JobAdvertisement>> getByEmployerIdAndIsActive(@RequestParam int id, @RequestParam boolean result){
 		return this.jobAdvertisementService.getByEmployerIdAndIsActive(id,result);
+	}
+	
+	@GetMapping("/getByIsActiveSorted")
+	public DataResult<List<JobAdvertisement>> getByIsActiveSorted(){
+		return this.jobAdvertisementService.getByIsActiveSorted();
 	}
 
 }

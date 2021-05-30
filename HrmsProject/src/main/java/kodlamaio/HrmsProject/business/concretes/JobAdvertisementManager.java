@@ -58,12 +58,6 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 		(this.jobAdvertisementDao.getAllOpenJobAdvertisementList());
 	}
 
-	@Override
-	public DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(LocalDate releaseDate) {
-		return new SuccessDataResult<List<JobAdvertisement>>
-		(this.jobAdvertisementDao.getByIsOpenAndReleaseDate(releaseDate),
-				"aktif tüm iş ilanları tarihe göre listlendi.");
-	}
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getByEmployerIdAndIsActive(int id,boolean isActive) {
@@ -71,6 +65,12 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 		(this.jobAdvertisementDao.getByEmployerIdAndIsActive(id, isActive),
 				"firmaya ait tüm aktif iş ilanları listlendi.");
 	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getByIsActiveSorted() {
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByIsActiveSorted());
+	}
+
 
 	
 

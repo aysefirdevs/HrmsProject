@@ -19,8 +19,9 @@ public interface JobAdvertisementService {
 	
 	DataResult<List<JobAdvertisement>> getAllOpenJobAdvertisementList();
 	
-	DataResult<List<JobAdvertisement>> getByIsOpenAndReleaseDate(LocalDate releaseDate);
 	
 	DataResult<List<JobAdvertisement>> getByEmployerIdAndIsActive(int id,boolean isActive);
+	
+	DataResult<List<JobAdvertisement>> getByIsActiveSorted();
 	
 }
