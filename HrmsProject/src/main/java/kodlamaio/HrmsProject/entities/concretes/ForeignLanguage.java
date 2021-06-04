@@ -12,11 +12,14 @@ import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name="foreign_languages")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","curriculumVitae"})
 public class ForeignLanguage {
 	
 	@Id

@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @Table(name="curriculum_vitaes")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","schools"})
 public class CurriculumVitae {
 	
 	@Id
@@ -48,23 +47,23 @@ public class CurriculumVitae {
 	@Column(name = "profile_photo")
 	private String profilePhoto;
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy = "curriculumVitae") //field ismi
 	private List<School> schools;
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy = "curriculumVitae")
 	private List<Experience> experiences;
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy = "curriculumVitae")
 	private List<ForeignLanguage> foreignLanguages;
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy = "curriculumVitae")
 	private List<Technology> technologies;
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy = "curriculumVitae")
 	private List<CvImage> cvImages;
 }
