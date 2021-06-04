@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kodlamaio.HrmsProject.business.abstracts.CandidateCheckService;
 import kodlamaio.HrmsProject.business.abstracts.CandidateService;
-import kodlamaio.HrmsProject.core.utilities.adapters.CheckIfRealPersonService;
+import kodlamaio.HrmsProject.core.utilities.adapters.abstracts.CheckIfRealPersonService;
 import kodlamaio.HrmsProject.core.utilities.results.DataResult;
 import kodlamaio.HrmsProject.core.utilities.results.ErrorResult;
 import kodlamaio.HrmsProject.core.utilities.results.Result;

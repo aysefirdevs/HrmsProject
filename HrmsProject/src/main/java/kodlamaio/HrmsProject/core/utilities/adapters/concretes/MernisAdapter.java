@@ -1,10 +1,11 @@
-package kodlamaio.HrmsProject.core.utilities.adapters;
+package kodlamaio.HrmsProject.core.utilities.adapters.concretes;
 
 //import java.rmi.RemoteException;
 
 
 import org.springframework.stereotype.Service;
 
+import kodlamaio.HrmsProject.core.utilities.adapters.abstracts.CheckIfRealPersonService;
 import kodlamaio.HrmsProject.entities.concretes.Candidate;
 //import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
 
