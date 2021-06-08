@@ -2,6 +2,7 @@ package kodlamaio.HrmsProject.api.controllers;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import kodlamaio.HrmsProject.entities.concretes.Technology;
 
 @RestController
 @RequestMapping("/api/technologiescontroller")
+@CrossOrigin
 public class TechnologiesController {
 	
 	private TechnologyService technologyService;

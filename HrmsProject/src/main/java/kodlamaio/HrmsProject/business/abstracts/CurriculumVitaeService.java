@@ -12,7 +12,7 @@ import kodlamaio.HrmsProject.entities.concretes.CurriculumVitae;
 public interface CurriculumVitaeService {
 	DataResult<List<CurriculumVitae>> getAll();
 	Result add(CurriculumVitae curriculumVitae);
-	DataResult<List<CurriculumVitae>> getByCandidateId(int candidateId);
+	DataResult<CurriculumVitae> getByCandidate_id(int candidateId);
 	
 	DataResult<CurriculumVitae> imageUpload(int curriculumVitaeId, MultipartFile multipartFile) throws IOException;
 }

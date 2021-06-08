@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,7 @@ import kodlamaio.HrmsProject.entities.concretes.CurriculumVitae;
 
 @RestController
 @RequestMapping("/api/curriculumVitaes")
+@CrossOrigin
 public class CurriculumVitaesController {
 	
 	private CurriculumVitaeService curriculumVitaeService;
@@ -41,9 +43,9 @@ public class CurriculumVitaesController {
 		return this.curriculumVitaeService.add(curriculumVitae);
 	}
 	
-	@GetMapping("/getByCandidateId")
-	public DataResult<List<CurriculumVitae>> getByCandidateId(int candidateId){
-		return this.curriculumVitaeService.getByCandidateId(candidateId);
+	@GetMapping("/getByCandidate_id")
+	public DataResult<CurriculumVitae> getByCandidate_id(int candidateId){
+		return this.curriculumVitaeService.getByCandidate_id(candidateId);
 	}
 	
 	@PostMapping("/imageUpload")

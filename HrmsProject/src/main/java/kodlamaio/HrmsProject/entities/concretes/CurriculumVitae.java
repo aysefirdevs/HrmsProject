@@ -14,6 +14,8 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,7 +33,7 @@ public class CurriculumVitae {
 	@Column(name="id")
 	private int id;
 	
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name="candidate_id") //tablo adı
 	private Candidate candidate;
 	
@@ -59,6 +61,7 @@ public class CurriculumVitae {
 	@OneToMany(mappedBy = "curriculumVitae")
 	private List<ForeignLanguage> foreignLanguages;
 	
+
 	
 	@OneToMany(mappedBy = "curriculumVitae")
 	private List<Technology> technologies;

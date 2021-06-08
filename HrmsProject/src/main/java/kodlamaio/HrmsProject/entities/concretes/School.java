@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -25,7 +27,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="schools")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","curriculumVitae"})
 public class School {
 	
 	@Id
@@ -33,7 +34,8 @@ public class School {
 	@Column(name="id")
 	private int id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonProperty(access=Access.WRITE_ONLY)
+	@ManyToOne
 	@JoinColumn(name="curriculum_vitae_id")
 	private CurriculumVitae curriculumVitae;
 	

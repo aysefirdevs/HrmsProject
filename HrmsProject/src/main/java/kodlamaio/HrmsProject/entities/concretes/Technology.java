@@ -11,13 +11,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "technologies")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","curriculumVitae"})
 public class Technology {
 	
 	@Id
@@ -25,7 +26,8 @@ public class Technology {
 	@Column(name = "id")
 	private int id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonProperty(access=Access.WRITE_ONLY)
+	@ManyToOne
 	@JoinColumn(name = "curriculum_vitae_id")
 	private CurriculumVitae curriculumVitae;
 	

@@ -13,6 +13,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.Data;
 
@@ -27,7 +29,8 @@ public class ForeignLanguage {
 	@Column(name = "id")
 	private int id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonProperty(access=Access.WRITE_ONLY)
+	@ManyToOne
 	@JoinColumn(name="curriculum_vitae_id")
 	private CurriculumVitae curriculumVitae;
 	
