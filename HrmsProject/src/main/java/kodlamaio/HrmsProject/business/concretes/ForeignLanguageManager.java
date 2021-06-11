@@ -35,4 +35,9 @@ public class ForeignLanguageManager implements ForeignLanguageService{
 		return new SuccessResult("yabancı dil eklendi.");
 	}
 
+	@Override
+	public DataResult<List<ForeignLanguage>> getByCurriculumVitae_id(int id) {
+		return new SuccessDataResult<List<ForeignLanguage>>(this.foreignLanguageDao.getByCurriculumVitae_id(id));
+	}
+
 }

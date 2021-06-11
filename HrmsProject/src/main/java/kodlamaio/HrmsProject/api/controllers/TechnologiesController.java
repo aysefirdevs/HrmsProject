@@ -35,4 +35,9 @@ public class TechnologiesController {
 	public Result add(@RequestBody Technology technology) {
 		return this.technologyService.add(technology);
 	}
+	
+	@GetMapping("/getByCurriculumVitae_id")
+	public DataResult<List<Technology>> getByCurriculumVitae_id(int id){
+		return this.technologyService.getByCurriculumVitae_id(id);
+	}
 }

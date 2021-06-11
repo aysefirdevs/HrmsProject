@@ -11,4 +11,5 @@ public interface ExperienceService {
 	DataResult<List<Experience>> getAll();
 	Result add(Experience experience);
 	DataResult<List<Experience>> getByCurriculumVitae_IdOrderByEndDateDesc(int curriculumVitaeId);
+	DataResult<List<Experience>> getByCurriculumVitae_id(int id);
 }

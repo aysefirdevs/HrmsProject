@@ -36,4 +36,9 @@ public class ForeignLanguagesController {
 	public Result add(@RequestBody ForeignLanguage foreignLanguage) {
 		return this.foreignLanguageService.add(foreignLanguage);
 	}
+	
+	@GetMapping("/getByCurriculumVitae_id")
+	public DataResult<List<ForeignLanguage>> getByCurriculumVitae_id(int id){
+		return this.foreignLanguageService.getByCurriculumVitae_id(id);
+	}
 }

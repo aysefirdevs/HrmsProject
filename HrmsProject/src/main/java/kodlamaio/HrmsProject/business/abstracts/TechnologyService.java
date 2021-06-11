@@ -9,4 +9,5 @@ import kodlamaio.HrmsProject.entities.concretes.Technology;
 public interface TechnologyService {
 	DataResult<List<Technology>> getAll();
 	Result add(Technology technology);
+	DataResult<List<Technology>> getByCurriculumVitae_id(int id);
 }

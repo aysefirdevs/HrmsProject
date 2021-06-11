@@ -41,4 +41,9 @@ public class ExperiencesController {
 	public DataResult<List<Experience>> getByCurriculumVitae_IdOrderByEndDateDesc(int curriculumVitaeId){
 		return this.experienceService.getByCurriculumVitae_IdOrderByEndDateDesc(curriculumVitaeId);
 	}
+	
+	@GetMapping("/getByCurriculumVitae_id")
+	public DataResult<List<Experience>> getByCurriculumVitae_id(int id){
+		return this.experienceService.getByCurriculumVitae_id(id);
+	}
 }

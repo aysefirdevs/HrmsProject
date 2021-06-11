@@ -40,4 +40,9 @@ public class ExperienceManager implements ExperienceService{
 		return new SuccessDataResult<List<Experience>>(this.experienceDao.getByCurriculumVitae_IdOrderByEndDateDesc(curriculumVitaeId),"Deneyimler tarihe göre sıralandı.");
 	}
 
+	@Override
+	public DataResult<List<Experience>> getByCurriculumVitae_id(int id) {
+		return new SuccessDataResult<List<Experience>>(this.experienceDao.getByCurriculumVitae_id(id));
+	}
+
 }

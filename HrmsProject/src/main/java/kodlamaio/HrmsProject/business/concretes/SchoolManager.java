@@ -41,5 +41,10 @@ public class SchoolManager implements SchoolService{
 		Sort sort = Sort.by(Sort.Direction.DESC,"finishDate");
 		return new SuccessDataResult<List<School>>(this.schoolDao.findAll(sort));
 	}
+
+	@Override
+	public DataResult<List<School>> getByCurriculumVitae_id(int id) {
+		return new SuccessDataResult<List<School>>(this.schoolDao.getByCurriculumVitae_id(id));
+	}
 	
 }

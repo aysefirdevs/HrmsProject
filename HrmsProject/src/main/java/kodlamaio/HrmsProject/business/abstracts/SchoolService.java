@@ -10,4 +10,5 @@ public interface SchoolService {
 	DataResult<List<School>> getAll();
 	Result add(School school);
 	DataResult<List<School>> getAllSorted();
+	DataResult<List<School>> getByCurriculumVitae_id(int id);
 }

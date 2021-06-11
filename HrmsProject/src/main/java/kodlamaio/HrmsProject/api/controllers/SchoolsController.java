@@ -63,4 +63,9 @@ public class SchoolsController {
 		return errors;
 	}
 	
+	@GetMapping("/getByCurriculumVitae_id")
+	public DataResult<List<School>> getByCurriculumVitae_id(int id){
+		return this.schoolService.getByCurriculumVitae_id(id);
+	}
+	
 }
