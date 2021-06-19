@@ -64,5 +64,16 @@ public class JobAdvertisement {
 		
 		@Column(name="is_active")
 		private boolean isActive;
+		
+		@Column(name="is_confirmed")
+		private boolean isConfirmed;
+		
+		@Column(name="work_type")
+		private String workType;
+		
+		@Column(name="work_time")
+		private String workTime;
+		
+		
 
 }
